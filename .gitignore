@@ -1,0 +1,11 @@
+.idea
+.vscode
+venv/
+env/
+.env
+.coverage
+product/__pycache__/
+product/migrations/__pycache__/
+api/__pycache__/
+product/tests/__pycache__/
+product/views/__pycache__/
