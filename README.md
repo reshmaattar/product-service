@@ -50,3 +50,5 @@ To stop in container run below command
 ```sh 
     $ docker-compose -f docker-compose.yml down
 ```
+## Screenshot  :
+![Demo](https://github.com/reshmaattar/product-service/blob/master/demo.png)  
