@@ -191,12 +191,11 @@ class UpdateProductsTest(BaseViewTest):
     def test_valid_update_a_product(self):
         
         # hit the API endpoint
+        previous_data = self.fetch_a_product(self.valid_product_id).data
         response = self.update_a_product(self.valid_product_id,data=self.valid_data)
-        actual_data = self.ignore_keys(response.data,"sku_id")
-        expected_data= {**self.valid_data,
-                        **{'price':"{:.2f}".format(self.valid_data['price'])}
-                        }
-        self.assertEqual(actual_data, expected_data)
+        self.assertEqual(response.data['name'], previous_data['name'])
+        self.assertEqual(response.data['price'], previous_data['price']) 
+        self.assertEqual(response.data['qty'], self.valid_data['qty'])
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_invalid_update_a_product(self):

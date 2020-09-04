@@ -19,7 +19,7 @@ form data always send data in string to converted it in correct form
 def convert_type(val):
     try:
         val = ast.literal_eval(val)
-    except ValueError:
+    except Exception:
         pass
     return val
 """
