@@ -2,7 +2,7 @@ from rest_framework.response import Response
 from rest_framework.views import status
 from functools import wraps
 import json,ast,copy
-from jsonschema import FormatChecker, validate, ValidationError, Draft4Validator, validators
+from jsonschema import FormatChecker, validate, ValidationError 
 
 def error_response(message):
     return Response(
